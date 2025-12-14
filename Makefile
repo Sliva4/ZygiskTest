@@ -2,8 +2,8 @@ all: build zip-all
 build:
 	@cd module && ndk-build && cd ..
 zip-all:
-	ls && pwd
-	@mv module/libs/arm64-v8a/libZygiskHide.so module/template/zygisk/
+	ls && pwd && ls module && ls module/template
+	@mv module/libs/arm64-v8a/libZygiskHide.so module/template/zygisk
 	@mv module/template/zygisk/libZygiskHide.so module/template/arm64-v8a.so
 	@mv module/libs/armeabi-v7a/libZygiskHide.so module/template/zygisk
 	@mv module/template/zygisk/libZygiskHide.so module/template/zygisk/armeabi-v7a.so
