@@ -19,7 +19,7 @@ jobs:
 
       - name: Build Module
         run: |
-          cd module && make
+           make
 
       - name: Upload Module Artifact
         uses: actions/upload-artifact@v4
