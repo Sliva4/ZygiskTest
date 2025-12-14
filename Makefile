@@ -4,11 +4,7 @@ build-zygisk:
 zip-all:
 	@mv module/libs/arm64-v8a/libZygiskHide.so module/template/zygisk/arm64-v8a.so
 	@mv module/libs/armeabi-v7a/libZygiskHide.so module/template/zygisk/armeabi-v7a.so
-	@cd module/template
-	@zip -r9 ZygiskHide.zip module.prop zygisk/arm64-v8a.so zygisk/armeabi-v7a.so
-	@mv ZygiskHide.zip ..
-	@cd ..
-	@cd ..
+	@cd module/template && zip -r9 ZygiskHide.zip module.prop zygisk/arm64-v8a.so zygisk/armeabi-v7a.so && mv ZygiskHide.zip .. && cd .. && cd ..
 clean:
 	@rm -rf module/libs
 	@rm -rf module/template/zygisk/arm64-v8a.so
