@@ -8,7 +8,7 @@ copy-monitor:
 zip-all:
 	@mv module/libs/arm64-v8a/libZygiskHide.so module/template/zygisk/arm64-v8a.so
 	@mv module/libs/armeabi-v7a/libZygiskHide.so module/template/zygisk/armeabi-v7a.so
-	@cd module/template && zip -r9 ZygiskHide.zip monitor post-fs-data.sh old.prop module.prop zygisk/arm64-v8a.so zygisk/armeabi-v7a.so && mv ZygiskHide.zip .. && cd .. && cd ..
+	@cd module/template && zip -r9 ZygiskHide.zip monitor service.sh post-fs-data.sh old.prop module.prop zygisk/arm64-v8a.so zygisk/armeabi-v7a.so && mv ZygiskHide.zip .. && cd .. && cd ..
 configure-template:
 	@cat module/template/module.prop > module/template/old.prop
 clean:
