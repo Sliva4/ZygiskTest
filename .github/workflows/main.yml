@@ -19,6 +19,7 @@ jobs:
           components: rust-src
 
       - name: Setup NDK
+        id: setup-ndk
         uses: nttld/setup-ndk@v1
         with:
           ndk-version: r27
