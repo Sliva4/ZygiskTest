@@ -34,7 +34,7 @@ public:
 
     void preAppSpecialize(AppSpecializeArgs *args) override {
 		api->setOption(zygisk::Option::DLCLOSE_MODULE_LIBRARY);
-        LOGD("[ZygiskHide] Creating Zygisk Check")
+        LOGD("[ZygiskHide] Creating Zygisk Check");
         std::ofstream check("/data/adb/modules/zygisk_hide/zygisk_check");
         check.close();
         uint32_t flags = api->getFlags();
