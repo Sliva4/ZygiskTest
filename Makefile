@@ -1,8 +1,10 @@
-all: configure-template build-zygisk build-monitor zip-all
+all: configure-template build-zygisk build-monitor copy-monitor zip-all
 build-zygisk:
 	@cd module && ndk-build && cd ..
 build-monitor:
 	@cd monitor && make build && cd ..
+copy-monitor:
+	@cp monitor/monitor module/template
 zip-all:
 	@mv module/libs/arm64-v8a/libZygiskHide.so module/template/zygisk/arm64-v8a.so
 	@mv module/libs/armeabi-v7a/libZygiskHide.so module/template/zygisk/armeabi-v7a.so
