@@ -1,3 +1,3 @@
 cat old.prop > module.prop
-chmod +x monitor
-./monitor status "post-fs-data"
+chmod +x zh
+./zh status "post-fs-data"

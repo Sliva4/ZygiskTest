@@ -1,12 +1,12 @@
 all: run
 github-actions: build copy
 build:
-	@cargo build --target=aarch64-linux-android --release && cp target/aarch64-linux-android/release/monitor .
+	@cargo build --target=aarch64-linux-android --release && cp target/aarch64-linux-android/release/zh .
 run: build
-	@./monitor
+	@./zh
 clean:
 	@rm -f module.prop
-	@rm -f monitor
+	@rm -f zh
 full-clean: clean
 	@cargo clean --quiet
 debug:

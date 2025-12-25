@@ -1,2 +1,2 @@
-chmod +x monitor
-./monitor ok
+chmod +x zh
+./zh ok

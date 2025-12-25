@@ -1,2 +1,2 @@
-chmod +x monitor
-./monitor status "late_start"
+chmod +x zh
+./zh status "late_start"
