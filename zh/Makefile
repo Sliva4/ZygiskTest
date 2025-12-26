@@ -10,7 +10,7 @@ clean:
 	@rm -f config.toml
 full-clean: clean
 	@cargo clean --quiet
-build-debug:
+release-build:
 	@cargo build --release && cp target/release/zh .
-debug:
+release-run:
 	@cargo run --release
