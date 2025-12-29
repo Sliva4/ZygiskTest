@@ -1,19 +1,13 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/include $(LOCAL_PATH)/ELFIO
 LOCAL_MODULE := ZygiskHide
-LOCAL_SRC_FILES := main.cpp local_cxa_atexit_finalize_impl/atexit.cpp
-LOCAL_STATIC_LIBRARIES := libcxx
+LOCAL_SRC_FILES := fd_reopener.cpp utils.cpp map_parser.cpp mountinfo_parser.cpp modules.cpp main.cpp local_cxa_atexit_finalize_impl/atexit.cpp
+LOCAL_STATIC_LIBRARIES := libcxx libsystemproperties libfdutils
 LOCAL_LDLIBS := -llog
 include $(BUILD_SHARED_LIBRARY)
 
 include jni/libcxx/Android.mk
-
-# If you do not want to use libc++, link to system stdc++
-# so that you can at least call the new operator in your code
-
-# include $(CLEAR_VARS)
-# LOCAL_MODULE := example
-# LOCAL_SRC_FILES := example.cpp
-# LOCAL_LDLIBS := -llog -lstdc++
-# include $(BUILD_SHARED_LIBRARY)
+include jni/aosp_system_properties/Android.mk
+include jni/aosp_fd_utils/Android.mk
