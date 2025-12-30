@@ -1,5 +1,5 @@
-SKIPVBMETA=false
-[ -f "$MODPATH/skipvbmeta" ] && SKIPVBMETA=true
+VBMETA=false
+[ -f "$MODPATH/vbmeta" ] && VBMETA=true
 
 # resetprop_if_diff <prop name> <expected value>
 resetprop_if_diff() {

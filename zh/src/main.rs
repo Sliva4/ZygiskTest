@@ -8,11 +8,14 @@ enum Argument {
     Config,
     ConfigGet
 }
+
 fn info() -> String {
     let sha256ok = format!("Successful installation: {}",utils::sha256ok_exists());
-    let value: String = format!("[KERNEL]\nVersion: {}[VERSION]\nzh: {}\nModule: {}\n[CONFIG]\n{}\n[OTHER]\n{}",&utils::get_kernel_version(),vars::ZH_VERSION,vars::MODULE_VERSION,&config::get_config_txt(),sha256ok);
+    let vbmeta = format!("Hide vbmeta props: {}",utils::vbmeta_exists());
+    let value: String = format!("[KERNEL]\nVersion: {}[VERSION]\nzh: {}\nModule: {}\n[CONFIG]\n{}\n[OTHER]\n{}\n{}",&utils::get_kernel_version(),vars::ZH_VERSION,vars::MODULE_VERSION,&config::get_config_txt(),sha256ok,vbmeta);
     return value;
 }
+
 fn main() {
     let args: Vec<String> = env::args().collect();
     let mut arg_type: Argument = Argument::None;

@@ -1,4 +1,4 @@
-FILES := zh boot-completed.sh common_func.sh service.sh customize.sh post-fs-data.sh old.prop module.prop zygisk/arm64-v8a.so
+FILES := zh vbmeta boot-completed.sh common_func.sh service.sh customize.sh post-fs-data.sh old.prop module.prop zygisk/arm64-v8a.so
 ZIP_NAME := ZygiskHide.zip
 all: build-module
 build-module: configure-template build-zh copy-zh build-zygisk copy-zygisk-files hash zip-all
