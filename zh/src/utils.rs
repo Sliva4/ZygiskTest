@@ -1,10 +1,8 @@
 use std::fs;
 use std::process::Command;
 use std::path::Path;
-use crate::config::get_config;
 use crate::vars::ZH_SHA256_PATH;
-use crate::vars::ZH_VBMETA_PATH;
-use crate::vars::ZH_ROM_PATH;
+use crate::config::get_config;
 pub fn update_status(status: &str) {
     let path = "module.prop";
     let content = format!(r#"id=zygisk_hide
@@ -25,12 +23,4 @@ pub fn get_kernel_version() -> String {
 
 pub fn sha256ok_exists() -> bool {
     return Path::new(ZH_SHA256_PATH).exists();
-}
-
-pub fn vbmeta_exists() -> bool {
-    return Path::new(ZH_VBMETA_PATH).exists();
-}
-
-pub fn rom_exists() -> bool {
-    return Path::new(ZH_ROM_PATH).exists();
 }

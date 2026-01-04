@@ -11,8 +11,8 @@ enum Argument {
 
 fn info() -> String {
     let sha256ok = format!("Successful installation: {}",utils::sha256ok_exists());
-    let vbmeta = format!("Hide vbmeta props: {}",utils::vbmeta_exists());
-    let rom = format!("Hide rom props: {}",utils::rom_exists());
+    let vbmeta = format!("Hide vbmeta props: {}",config::get_config("vbmeta"));
+    let rom = format!("Hide rom props: {}",config::get_config("rom"));
     let value: String = format!("[KERNEL]\nVersion: {}[VERSION]\nzh: {}\nModule: {}\n[CONFIG]\n{}\n[OTHER]\n{}\n{}\n{}",&utils::get_kernel_version(),vars::ZH_VERSION,vars::MODULE_VERSION,&config::get_config_txt(),sha256ok,vbmeta,rom);
     return value;
 }

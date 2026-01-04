@@ -8,8 +8,6 @@ clean:
 	@rm -f module.prop
 	@rm -f zh
 	@rm -f config.toml
-	@rm -f rom
-	@rm -f vbmeta
 full-clean: clean
 	@cargo clean --quiet
 release-build:

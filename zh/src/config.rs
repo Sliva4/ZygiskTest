@@ -4,7 +4,9 @@ use crate::vars::ZH_CONFIG_PATH;
 
 #[derive(Deserialize)]
 struct Config {
-   mode: String
+   mode: String,
+   vbmeta: bool,
+   rom: bool
 }
 
 pub fn get_config_txt() -> String {
@@ -16,6 +18,10 @@ pub fn get_config(option: &str) -> String {
     let config: Config = toml::from_str(&contents).unwrap();
     if option == "mode" {
         return config.mode;
+    } else if option == "vbmeta" {
+        return config.vbmeta.to_string();
+    } else if  option == "rom" {
+        return config.rom.to_string();
     } else {
         return "".to_string();
     }
