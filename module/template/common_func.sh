@@ -1,8 +1,10 @@
 VBMETA=false
-[ ! "$MODPATH/zh config get vbmeta" | grep -q true ] && VBMETA=true
+$MODPATH/zh config get rom | grep -q true
+[ $? -eq 0 ] && VBMETA=true
 
 ROM=false
-[ ! "$MODPATH/zh config get rom" | grep -q true ] && ROM=true
+$MODPATH/zh config get rom | grep -q true
+[ $? -eq 0 ] && ROM=true
 
 # resetprop_if_diff <prop name> <expected value>
 resetprop_if_diff() {
